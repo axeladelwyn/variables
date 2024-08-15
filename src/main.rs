@@ -1,3 +1,6 @@
+use std::io;
+
+
 fn main() {
     let mut x = 5;
     println!("The value of x is: {x}");
@@ -56,6 +59,51 @@ fn main() {
     let heart_eyed_cat = '😻' ;
 
     println!("Today emoji is {} ", heart_eyed_cat);
+
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+    let (x, y, z) = tup;
+
+    println!("The value of x is {}, y is {}, z is {}", x, y , z);
+
+    let five_hundred = tup.0;
+
+    let six_point_four = tup.1;
+
+    let one = tup.2;
+
+    println!("{}, {}, {}", five_hundred, six_point_four, one);    
+
+    let a: [i32; 5] = [5, 4, 2, 1, 7];
+
+    let b = [7; 10];
+
+    let first = a[0];
+
+    let second = a[1];
+
+    let months = ["January", "February", "March", "April", "May", "June", "July", 
+    "August", "September", "October", "November", "December"];
+    
+    println!("The first value on array a is {}", first);    
+
+    println!("Please enter an array index.");
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
+
+    let element = a[index];
+
+    println!("The value of the element at index {index} is: {element}");
+
 
 
 
